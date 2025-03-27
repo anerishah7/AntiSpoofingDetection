@@ -1,0 +1,13 @@
+image_name,person_name,label
+./test_data/ricky_test/images/Ricky_Real.png,Ricky_Real.png,0
+./test_data/ricky_test/images/Jason_Spoof.png,Jason_Spoof.png,1
+./test_data/ricky_test/images/Raymond_Spoof.png,Raymond_Spoof.png,1
+./test_data/ricky_test/images/Aaron_Spoof.png,Aaron_Spoof.png,1
+./test_data/ricky_test/images/Ryan_Spoof.png,Ryan_Spoof.png,1
+./test_data/ricky_test/images/Ryan_Real.png,Ryan_Real.png,0
+./test_data/ricky_test/images/Jason_Real.png,Jason_Real.png,0
+./test_data/ricky_test/images/Aaron_Real.png,Aaron_Real.png,0
+./test_data/ricky_test/images/Ricky_Spoof.png,Ricky_Spoof.png,1
+./test_data/ricky_test/images/David_Real.png,David_Real.png,0
+./test_data/ricky_test/images/David_Spoof.png,David_Spoof.png,1
+./test_data/ricky_test/images/Raymond_Real.png,Raymond_Real.png,0
