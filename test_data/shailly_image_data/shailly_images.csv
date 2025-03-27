@@ -1,0 +1,13 @@
+image_name,person_name,label
+./test_data/shailly_image_data/images/Ashish_Gajjela_Real.png,Ashish_Gajjela,0
+./test_data/shailly_image_data/images/Ashish_Gajjela_Spoof.png,Ashish_Gajjela,1
+./test_data/shailly_image_data/images/Dhruv_Gorasiya_Real.png,Dhruv_Gorasiya,0
+./test_data/shailly_image_data/images/Dhruv_Gorasiya_Spoof.png,Dhruv_Gorasiya,1
+./test_data/shailly_image_data/images/Harsh_Mamania_Real.png,Harsh_Mamania,0
+./test_data/shailly_image_data/images/Harsh_Mamania_Spoof.png,Harsh_Mamania,1
+./test_data/shailly_image_data/images/Mayank_Tamakuwala_Real.png,Mayank_Tamakuwala,0
+./test_data/shailly_image_data/images/Mayank_Tamakuwala_Spoof.png,Mayank_Tamakuwala,1
+./test_data/shailly_image_data/images/Rajkesh_Shetty_Real.png,Rajkesh_Shetty,0
+./test_data/shailly_image_data/images/Rajkesh_Shetty_Spoof.png,Rajkesh_Shetty,1
+./test_data/shailly_image_data/images/Shailly_Bhati_Real.png,Shailly_Bhati,0
+./test_data/shailly_image_data/images/Shailly_Bhati_Spoof.png,Shailly_Bhati,1
