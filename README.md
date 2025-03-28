@@ -1,5 +1,9 @@
 # AntiSpoofingDetection
-# Authors: Aneri Shah, Ricky Lee, Shailly Bhati
+##############################################################################################
+Authors : Aneri Shah, Ricky Lee, Shailly Bhati
+##############################################################################################
+
+
 
 Data Files and Description:
 - 
