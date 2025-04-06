@@ -15,5 +15,5 @@ train_data = pd.DataFrame(training_list, columns=['image_name', 'person_name', '
 # print(train_data)
 
 # Umcomment to store the images in .csv fomat
-train_data.to_csv('./test_data/Aneri/aneri_images.csv', index=False)
+# train_data.to_csv('./test_data/Aneri/aneri_images.csv', index=False)
                                                                                                                                                                                                                          
