@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.optim as optim
 import pandas as pd
 from torch.utils.data import DataLoader
-from data_loader import SpoofDataset
+from data_loader import ClassificationDataSet
 from predict_faces_vgg import VGG_16
 
 # -----------------------------
@@ -69,8 +69,8 @@ def main():
     test_df = pd.read_csv(TEST_CSV)
 
     # Dataset and Dataloaders
-    train_dataset = SpoofDataset(train_df)
-    test_dataset = SpoofDataset(test_df)
+    train_dataset = ClassificationDataSet(train_df, label_col=2, label_map_file="label_map.json")
+    test_dataset = ClassificationDataSet(test_df, label_col=2, label_map_file="label_map.json")
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 
