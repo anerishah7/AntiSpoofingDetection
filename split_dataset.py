@@ -5,40 +5,44 @@ import data_loader
 
 merged_df = data_loader.merged_df
 
-print("Merged DataFrame columns:", merged_df.columns)
-print("Sample data:\n", merged_df.head())
-
-unique_people = merged_df['person_name'].unique()
-
-train_people, test_people = train_test_split(unique_people, test_size=0.3, random_state=42)
+# create identity so all pics of x person falls under one
+merged_df['person_id'] = merged_df['first_name'] + '_' + merged_df['last_name']
+unique_people = merged_df['person_id'].unique()
 
 # Split 1: People in training split should not be in test split
-train_df, test_df = train_test_split(merged_df, test_size=0.3, random_state=42, stratify=merged_df['label'])
-split1_train_df = merged_df[merged_df['person_name'].isin(train_people)]
-split1_test_df = merged_df[merged_df['person_name'].isin(test_people)]
+train_people, test_people = train_test_split(unique_people, test_size=0.3, random_state=42)
+split1_train_df = merged_df[merged_df['person_id'].isin(train_people)]
+split1_test_df = merged_df[merged_df['person_id'].isin(test_people)]
 
 # Save Split 1 to CSVs
-split1_train_df.to_csv('split1_train.csv', index=False)
-split1_test_df.to_csv('split1_test.csv', index=False)
+split1_train_df.to_csv('./data/spoof_model/split1_train.csv', index=False)
+split1_test_df.to_csv('./data/spoof_model/split1_test.csv', index=False)
 print("Split 1 complete (no overlapping people).")
 
 # Split 2: People in training split can be in test split
 split2_train_df, split2_test_df = train_test_split(merged_df, test_size=0.3, random_state=42, stratify=merged_df['label'])
 
 # Save split 2 to CSV's
-split2_train_df.to_csv('split2_train.csv', index=False)
-split2_test_df.to_csv('split2_test.csv', index=False)
-
+split2_train_df.to_csv('./data/spoof_model/split2_train.csv', index=False)
+split2_test_df.to_csv('./data/spoof_model/split2_test.csv', index=False)
 print("Split 2 complete (people may overlap).")
 
-'''
-Task to do
-spit out 
-file 1: data/spoof_nn/
-    train1.csv (people in train cant be in test) 70% train2.csv
-    test1.csv 30% test2.csv
-file 2: data/detect_nn/
-    train1.csv (5 images)
-    test1.csv  (1 image)
-    doesnt matter how you split real or fake
-'''
+# Split 3: 1 image per person in test, rest in train
+train_split3 = []
+test_split3 = []
+
+for person in merged_df['person_id'].unique():
+    person_df = merged_df[merged_df['person_id'] == person]
+    if len(person_df) >= 2:
+        sampled = person_df.sample(frac=1, random_state=42)
+        test_split3.append(sampled.iloc[0])
+        train_split3.append(sampled.iloc[1:])
+    else:
+        print(f"Skipping {person} (not enough images)")
+
+split3_train_df = pd.concat(train_split3)
+split3_test_df = pd.DataFrame(test_split3)
+
+split3_train_df.to_csv('./data/face_detection_model/train1.csv', index=False)
+split3_test_df.to_csv('./data/face_detection_model/test1.csv', index=False)
+print("Split 3 complete (1 image per person in test, rest in train).")

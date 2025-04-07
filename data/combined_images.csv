@@ -20,6 +20,7 @@ image_name,first_name,last_name,image_id,label
 ./data/images/Ahar_Solanki_1_Real.png,Ahar,Solanki,1,0
 ./data/images/Ricky_Lee_2_Spoof.png,Ricky,Lee,2,1
 ./data/images/Yash_Bhadreshwara_2_Real.png,Yash,Bhadreshwara,2,0
+./data/images/Aaron_Huang_2_Real.png,Aaron,Huang,2,0
 ./data/images/Shail_Shah_1_Spoof.png,Shail,Shah,1,1
 ./data/images/Jason_Wang_2_Real.png,Jason,Wang,2,0
 ./data/images/Raymond_Mei_1_Real.png,Raymond,Mei,1,0
