@@ -22,14 +22,9 @@ class SpoofDataset(Dataset):
         return image, label
 
 # Merge multiple CSVs
-csv_files = [
-    'test_data/shailly_image_data/shailly_images.csv',
-    'test_data/ricky_test/ricky_images.csv',
-    'test_data/Aneri/aneri_images.csv'
-]
+csv_file = './data/combined_images.csv'
 
-dataframes = [pd.read_csv(f) for f in csv_files]
-merged_df = pd.concat(dataframes, ignore_index=True)
+merged_df = pd.read_csv(csv_file)
 
 # Create dataset and dataloader
 dataset = SpoofDataset(merged_df)

@@ -30,3 +30,15 @@ split2_train_df.to_csv('split2_train.csv', index=False)
 split2_test_df.to_csv('split2_test.csv', index=False)
 
 print("Split 2 complete (people may overlap).")
+
+'''
+Task to do
+spit out 
+file 1: data/spoof_nn/
+    train1.csv (people in train cant be in test) 70% train2.csv
+    test1.csv 30% test2.csv
+file 2: data/detect_nn/
+    train1.csv (5 images)
+    test1.csv  (1 image)
+    doesnt matter how you split real or fake
+'''
