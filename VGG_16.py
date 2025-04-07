@@ -104,13 +104,13 @@ def imLoad(image_name):
 	return image
 
 
-# Load the model
-torch_model = VGG_16()
-torch_model.load_weights("VGG_FACE.t7")
+# # Load the model
+# torch_model = VGG_16()
+# torch_model.load_weights("VGG_FACE.t7")
 
-x=imLoad('./test_data/akki.png')
-# probabilities = F.softmax(torch_model(x))
-probabilities = F.softmax(torch_model(x), dim=1)  # if x is batched
-# print(probabilities)
-predicted_class = probabilities.argmax(dim=1)
-print(predicted_class)
+# x=imLoad('./test_data/akki.png')
+# # probabilities = F.softmax(torch_model(x))
+# probabilities = F.softmax(torch_model(x), dim=1)  # if x is batched
+# # print(probabilities)
+# predicted_class = probabilities.argmax(dim=1)
+# print(predicted_class)
