@@ -1,18 +1,12 @@
-'''
-1. Use the data frame from data_loader
-2. Use sklearn to split the data into train.csv and test.csv
-
-New obj:
-make 70/30 split
-Split 1: People in training split should not be in test split
-Split 2: People in training split can be in test split
-'''
 from sklearn.model_selection import train_test_split
 import pandas as pd
 from data_loader import SpoofDataset
 import data_loader
 
 merged_df = data_loader.merged_df
+
+print("Merged DataFrame columns:", merged_df.columns)
+print("Sample data:\n", merged_df.head())
 
 unique_people = merged_df['person_name'].unique()
 
