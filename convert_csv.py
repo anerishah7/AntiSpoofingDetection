@@ -34,6 +34,4 @@ df = pd.DataFrame(data)
 # Convert to csv
 df.to_csv('./data/combined_images.csv', index=False)
 # Show the result
-print(df)
-
-# renmae this convert_csv.py
+# print(df)

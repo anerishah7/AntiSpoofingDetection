@@ -3,13 +3,13 @@ import torch.nn as nn
 import torch.optim as optim
 import pandas as pd
 from torch.utils.data import DataLoader
-from data_loader import SpoofDataset
-from predict_faces_vgg import VGG_16
+from data_loader import ClassificationDataSet
+from VGG_16 import VGG_16
 
 # -----------------------------
 # Config
-TRAIN_CSV = 'test_data/Aneri/aneri_images.csv'
-TEST_CSV = 'test_data/ricky_test/ricky_images.csv'
+TRAIN_CSV = 'data/spoof_model/split1_train.csv'
+TEST_CSV = 'data/spoof_model/split1_test.csv'
 WEIGHTS_PATH = 'VGG_FACE.t7'
 BATCH_SIZE = 32
 NUM_EPOCHS = 5
@@ -69,8 +69,8 @@ def main():
     test_df = pd.read_csv(TEST_CSV)
 
     # Dataset and Dataloaders
-    train_dataset = SpoofDataset(train_df)
-    test_dataset = SpoofDataset(test_df)
+    train_dataset = ClassificationDataSet(train_df, label_col=4, label_map_file="spoof_labels.json")
+    test_dataset = ClassificationDataSet(test_df, label_col=4, label_map_file="spoof_labels.json")
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
 

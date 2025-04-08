@@ -1,12 +1,9 @@
-import torch
-import torchfile
-import torch.nn as nn
-from torchvision import transforms
 import torch.nn.functional as F
-from PIL import Image
+import torch.nn as nn
+import torchfile
+import torch
 
-# -----------------------------
-# Prof Impl
+# VGG Architecture
 class VGG_16(nn.Module):
 	def __init__(self):
 		"""
@@ -31,10 +28,6 @@ class VGG_16(nn.Module):
 		self.fc7 = nn.Linear(4096, 4096)
 		self.fc8 = nn.Linear(4096, 2622)
 	def load_weights(self, path):
-		""" Function to load luatorch pretrained
-		Args:
-			path: path for the luatorch pretrained
-		"""
 		model = torchfile.load(path)
 		counter = 1
 		block = 1
@@ -54,11 +47,6 @@ class VGG_16(nn.Module):
 					self_layer.weight.data[...] = torch.tensor(layer.weight).view_as(self_layer.weight)[...]
 					self_layer.bias.data[...] = torch.tensor(layer.bias).view_as(self_layer.bias)[...]
 	def forward(self, x):
-		""" Pytorch forward
-		Args:
-			x: input image (224x224)
-		Returns: class logits
-		"""
 		x = F.relu(self.conv_1_1(x))
 		x = F.relu(self.conv_1_2(x))
 		x = F.max_pool2d(x, 2, 2)
@@ -83,34 +71,3 @@ class VGG_16(nn.Module):
 		x = F.relu(self.fc7(x))
 		x = F.dropout(x, 0.5, self.training)
 		return self.fc8(x)
-
-preprocess = transforms.Compose([
-    # transforms.ToTensor(),
-    # transforms.Lambda(lambda x: x * 255),  # Scale to [0, 255]
-    # transforms.Normalize(mean=mean, std=[1.0, 1.0, 1.0])
-	transforms.Resize((224, 224)),
-	transforms.ToTensor(),
-	#transforms.Normalize(mean = [129.1863, 104.7624, 93.5940])
-])
-
-def imLoad(image_name):
-	image = Image.open(image_name).convert('RGB')
-	# image = data_transforms[TEST](image)
-	image = preprocess(image)
-	image = image.unsqueeze(0)
-	# temp_image = transforms.ToPILImage()(image)
-	# temp_image.save('processed_image.png')
-	
-	return image
-
-
-# Load the model
-torch_model = VGG_16()
-torch_model.load_weights("VGG_FACE.t7")
-
-x=imLoad('./test_data/akki.png')
-# probabilities = F.softmax(torch_model(x))
-probabilities = F.softmax(torch_model(x), dim=1)  # if x is batched
-# print(probabilities)
-predicted_class = probabilities.argmax(dim=1)
-print(predicted_class)

@@ -2,3 +2,5 @@
 .gitignore
 .DS_Store
 VGG_FACE.t7
+
+*.pth
