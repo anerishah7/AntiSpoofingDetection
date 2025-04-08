@@ -6,7 +6,7 @@ from PIL import Image
 import torchvision.transforms as transforms
 
 class ClassificationDataSet(Dataset):
-    def _init_(self, dataframe, label_col=2, transform=None, label_map_file=None):
+    def __init__(self, dataframe, label_col=2, transform=None, label_map_file=None):
         self.data = dataframe.reset_index(drop=True)
         self.label_col = label_col
         self.label_map_file = label_map_file
@@ -37,10 +37,10 @@ class ClassificationDataSet(Dataset):
         # Store encoded labels in the dataframe
         self.data['encoded_label'] = raw_labels.map(self.label_mapping)
 
-    def _len_(self):
+    def __len__(self):
         return len(self.data)
 
-    def _getitem_(self, idx):
+    def __getitem__(self, idx):
         img_path = self.data.iloc[idx, 0]
         label = int(self.data.iloc[idx]['encoded_label'])
         image = Image.open(img_path).convert("RGB")
