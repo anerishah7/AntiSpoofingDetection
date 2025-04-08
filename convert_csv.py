@@ -23,6 +23,7 @@ for index, file in enumerate(image_files):
         "image_name": os.path.join(folder_path, file),
         "first_name": first_name,
         "last_name": last_name,
+        "full_name": f"{first_name}_{last_name}",
         "image_id": image_id,
         "label": label
     })

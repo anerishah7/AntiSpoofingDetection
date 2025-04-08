@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 import pandas as pd
-from data_loader import SpoofDataset
+# from data_loader import SpoofDataset
 import data_loader
 
 merged_df = data_loader.merged_df
