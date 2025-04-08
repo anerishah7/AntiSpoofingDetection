@@ -31,15 +31,6 @@ for index, file in enumerate(image_files):
 df = pd.DataFrame(data)
 
 # Convert to csv
-# df.to_csv('./data/combined_images.csv', index=False)
+df.to_csv('./data/combined_images.csv', index=False)
 # Show the result
-print(df)
-# print(df.groupby(['first_name', 'last_name']).size().reset_index(name='counts'))
-# aneri_df = df.groupby(['first_name', 'last_name']).size().reset_index(name='counts')
-aneri_list = ['Shah', 'Solanki', 'Rathod', 'Joshi', 'Bhatt', 'Bhadreshwara']
-# train_df = df[df['image_id'] < 3 and df['last_name'] in aneri_list]
-train_df = df[(df['image_id'] < 3) & (df['last_name'].isin(aneri_list))]
-test_df = df[df['image_id'] == 3]
-train_df.to_csv('./data/face_detection_model/train.csv', index=False)
-test_df.to_csv('./data/face_detection_model/test.csv', index=False)
-# renmae this convert_csv.py
+# print(df)
