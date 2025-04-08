@@ -1,7 +1,6 @@
 image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Raymond_Mei_2_Spoof.png,Raymond,Mei,Raymond_Mei,2,1
 ./data/images/Trupti_Shah_3_Spoof.png,Trupti,Shah,Trupti_Shah,3,1
-./data/images/Shailly_Bhati_4_Real.png,Shailly,Bhati,Shailly_Bhati,4,0
 ./data/images/Ashish_Gajjela_1_Spoof.png,Ashish,Gajjela,Ashish_Gajjela,1,1
 ./data/images/Dhruv_Gorasiya_2_Real.png,Dhruv,Gorasiya,Dhruv_Gorasiya,2,0
 ./data/images/Dhruv_Gorasiya_3_Real.png,Dhruv,Gorasiya,Dhruv_Gorasiya,3,0
@@ -13,7 +12,6 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Rajkesh_Shetty_2_Spoof.png,Rajkesh,Shetty,Rajkesh_Shetty,2,1
 ./data/images/Ricky_Lee_3_Spoof.png,Ricky,Lee,Ricky_Lee,3,1
 ./data/images/Harsh_Mamania_3_Spoof.png,Harsh,Mamania,Harsh_Mamania,3,1
-./data/images/Mayank_Tamakuwala_4_Real.png,Mayank,Tamakuwala,Mayank_Tamakuwala,4,0
 ./data/images/Yash_Bhadreshwara_1_Spoof.png,Yash,Bhadreshwara,Yash_Bhadreshwara,1,1
 ./data/images/Shailly_Bhati_3_Spoof.png,Shailly,Bhati,Shailly_Bhati,3,1
 ./data/images/Dhruv_Gorasiya_3_Spoof.png,Dhruv,Gorasiya,Dhruv_Gorasiya,3,1
@@ -25,7 +23,6 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Sarah_Landry_1_Real.png,Sarah,Landry,Sarah_Landry,1,0
 ./data/images/Harsh_Mamania_1_Real.png,Harsh,Mamania,Harsh_Mamania,1,0
 ./data/images/Aneri_Shah_3_Real.png,Aneri,Shah,Aneri_Shah,3,0
-./data/images/Rajkesh_Shetty_4_Spoof.png,Rajkesh,Shetty,Rajkesh_Shetty,4,1
 ./data/images/Aneri_Shah_2_Real.png,Aneri,Shah,Aneri_Shah,2,0
 ./data/images/Greg_Doucette_3_Real.png,Greg,Doucette,Greg_Doucette,3,0
 ./data/images/Greg_Doucette_2_Real.png,Greg,Doucette,Greg_Doucette,2,0
@@ -56,7 +53,6 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Harsh_Mamania_2_Spoof.png,Harsh,Mamania,Harsh_Mamania,2,1
 ./data/images/Ricky_Lee_2_Spoof.png,Ricky,Lee,Ricky_Lee,2,1
 ./data/images/Yash_Bhadreshwara_2_Real.png,Yash,Bhadreshwara,Yash_Bhadreshwara,2,0
-./data/images/Ashish_Gajjela_4_Real.png,Ashish,Gajjela,Ashish_Gajjela,4,0
 ./data/images/Yash_Bhadreshwara_3_Real.png,Yash,Bhadreshwara,Yash_Bhadreshwara,3,0
 ./data/images/Mayank_Tamakuwala_2_Spoof.png,Mayank,Tamakuwala,Mayank_Tamakuwala,2,1
 ./data/images/Rajkesh_Shetty_3_Spoof.png,Rajkesh,Shetty,Rajkesh_Shetty,3,1
@@ -67,11 +63,8 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Shailly_Bhati_2_Spoof.png,Shailly,Bhati,Shailly_Bhati,2,1
 ./data/images/Mike_Isratel_3_Spoof.png,Mike,Isratel,Mike_Isratel,3,1
 ./data/images/Emily_Pham_2_Spoof.png,Emily,Pham,Emily_Pham,2,1
-./data/images/Dhruv_Gorasiya_4_Real.png,Dhruv,Gorasiya,Dhruv_Gorasiya,4,0
-./data/images/Harsh_Mamania_4_Spoof.png,Harsh,Mamania,Harsh_Mamania,4,1
 ./data/images/Shailly_Bhati_3_Real.png,Shailly,Bhati,Shailly_Bhati,3,0
 ./data/images/Shailly_Bhati_2_Real.png,Shailly,Bhati,Shailly_Bhati,2,0
-./data/images/Mayank_Tamakuwala_4_Spoof.png,Mayank,Tamakuwala,Mayank_Tamakuwala,4,1
 ./data/images/Jason_Wang_2_Real.png,Jason,Wang,Jason_Wang,2,0
 ./data/images/Raymond_Mei_1_Real.png,Raymond,Mei,Raymond_Mei,1,0
 ./data/images/Jason_Wang_3_Real.png,Jason,Wang,Jason_Wang,3,0
@@ -80,7 +73,6 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Dhruv_Rathod_2_Spoof.png,Dhruv,Rathod,Dhruv_Rathod,2,1
 ./data/images/Nidhi_Joshi_3_Real.png,Nidhi,Joshi,Nidhi_Joshi,3,0
 ./data/images/Nidhi_Joshi_2_Real.png,Nidhi,Joshi,Nidhi_Joshi,2,0
-./data/images/Rajkesh_Shetty_4_Real.png,Rajkesh,Shetty,Rajkesh_Shetty,4,0
 ./data/images/Tirth_Bhatt_3_Spoof.png,Tirth,Bhatt,Tirth_Bhatt,3,1
 ./data/images/Zeel_Shah_3_Spoof.png,Zeel,Shah,Zeel_Shah,3,1
 ./data/images/Gaurang_Shah_3_Spoof.png,Gaurang,Shah,Gaurang_Shah,3,1
@@ -95,9 +87,7 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Gaurang_Shah_3_Real.png,Gaurang,Shah,Gaurang_Shah,3,0
 ./data/images/Adi_Shah_1_Real.png,Adi,Shah,Adi_Shah,1,0
 ./data/images/Gaurang_Shah_2_Real.png,Gaurang,Shah,Gaurang_Shah,2,0
-./data/images/Shailly_Bhati_4_Spoof.png,Shailly,Bhati,Shailly_Bhati,4,1
 ./data/images/Ahar_Solanki_1_Spoof.png,Ahar,Solanki,Ahar_Solanki,1,1
-./data/images/Dhruv_Gorasiya_4_Spoof.png,Dhruv,Gorasiya,Dhruv_Gorasiya,4,1
 ./data/images/Dhruv_Rathod_2_Real.png,Dhruv,Rathod,Dhruv_Rathod,2,0
 ./data/images/Dhruv_Rathod_3_Real.png,Dhruv,Rathod,Dhruv_Rathod,3,0
 ./data/images/David_Dihn_2_Spoof.png,David,Dihn,David_Dihn,2,1
@@ -150,7 +140,6 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Gaurang_Shah_1_Real.png,Gaurang,Shah,Gaurang_Shah,1,0
 ./data/images/Greg_Doucette_2_Spoof.png,Greg,Doucette,Greg_Doucette,2,1
 ./data/images/Purvesh_Shah_1_Spoof.png,Purvesh,Shah,Purvesh_Shah,1,1
-./data/images/Harsh_Mamania_4_Real.png,Harsh,Mamania,Harsh_Mamania,4,0
 ./data/images/Raymond_Mei_1_Spoof.png,Raymond,Mei,Raymond_Mei,1,1
 ./data/images/Dhruv_Rathod_1_Real.png,Dhruv,Rathod,Dhruv_Rathod,1,0
 ./data/images/Ashish_Gajjela_2_Spoof.png,Ashish,Gajjela,Ashish_Gajjela,2,1
@@ -171,7 +160,6 @@ image_name,first_name,last_name,full_name,image_id,label
 ./data/images/Gaurang_Shah_1_Spoof.png,Gaurang,Shah,Gaurang_Shah,1,1
 ./data/images/Zeel_Shah_1_Spoof.png,Zeel,Shah,Zeel_Shah,1,1
 ./data/images/Aaron_Huang_3_Spoof.png,Aaron,Huang,Aaron_Huang,3,1
-./data/images/Ashish_Gajjela_4_Spoof.png,Ashish,Gajjela,Ashish_Gajjela,4,1
 ./data/images/Aaron_Huang_1_Real.png,Aaron,Huang,Aaron_Huang,1,0
 ./data/images/Sarah_Landry_2_Spoof.png,Sarah,Landry,Sarah_Landry,2,1
 ./data/images/Ahar_Solanki_2_Real.png,Ahar,Solanki,Ahar_Solanki,2,0

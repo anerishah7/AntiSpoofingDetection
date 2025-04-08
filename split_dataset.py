@@ -3,7 +3,8 @@ import pandas as pd
 # from data_loader import SpoofDataset
 import data_loader
 
-merged_df = data_loader.merged_df
+csv_file = './data/combined_images.csv'
+merged_df = pd.read_csv(csv_file)
 
 # create identity so all pics of x person falls under one
 merged_df['person_id'] = merged_df['first_name'] + '_' + merged_df['last_name']
