@@ -4,3 +4,5 @@
 VGG_FACE.t7
 
 *.pth
+
+__pycache__/
