@@ -1,36 +1,8 @@
-import torch
-import torchfile
-import torch.nn as nn
-from torchvision import transforms
 import torch.nn.functional as F
-from PIL import Image
+import torch.nn as nn
+import torchfile
+import torch
 
-# -----------------------------
-# Prof Impl
-preprocess = transforms.Compose([
-    # transforms.ToTensor(),
-    # transforms.Lambda(lambda x: x * 255),  # Scale to [0, 255]
-    # transforms.Normalize(mean=mean, std=[1.0, 1.0, 1.0])
-	transforms.Resize((224, 224)),
-	transforms.ToTensor(),
-	#transforms.Normalize(mean = [129.1863, 104.7624, 93.5940])
-])
-
-def imLoad(image_name):
-	image = Image.open(image_name).convert('RGB')
-	# image = data_transforms[TEST](image)
-	image = preprocess(image)
-	image = image.unsqueeze(0)
-	# temp_image = transforms.ToPILImage()(image)
-	# temp_image.save('processed_image.png')
-
-	return image
-
-torch_model = VGG_16()
-
-
-# Load the model
-torch_model.load_weights("VGG_FACE.t7")
 class VGG_16(nn.Module):
 	def __init__(self):
 		"""
@@ -107,10 +79,3 @@ class VGG_16(nn.Module):
 		x = F.relu(self.fc7(x))
 		x = F.dropout(x, 0.5, self.training)
 		return self.fc8(x)
-
-x=imLoad('./test_data/akki.png')
-# probabilities = F.softmax(torch_model(x))
-probabilities = F.softmax(torch_model(x), dim=1)  # if x is batched
-# print(probabilities)
-predicted_class = probabilities.argmax(dim=1)
-print(predicted_class)
