@@ -7,15 +7,17 @@ import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 from data_loader import ClassificationDataSet
 from VGG_16 import VGG_16
+import torch.nn.functional as F
 
 TRAIN_CSV = './data/face_detection_model/train1.csv'
 TEST_CSV = './data/face_detection_model/test1.csv'
 WEIGHTS_PATH = './VGG_FACE.t7'
 BATCH_SIZE = 32
-NUM_EPOCHS = 5
+NUM_EPOCHS = 10
 LEARNING_RATE = 0.001
 MODEL_SAVE_PATH = './vgg_face_detection_finetuned.pth'
 LABEL_MAP_FILE = './person_labels_map.json'
+NUM_PEOPLE = 28
 
 transform = transforms.Compose([
  	transforms.Resize((224, 224)),
@@ -24,8 +26,7 @@ transform = transforms.Compose([
  
 def imLoad(image_name):
     image = Image.open(image_name).convert('RGB')
-    image = transform(image)
-    image = image.unsqueeze(0)
+    image = transform(image).unsqueeze(0)  
     return image
 
 # -----------------------------
@@ -120,7 +121,7 @@ def main():
         param.requires_grad = False
 
     # Replace and unfreeze fc8 layer for 24-class classification (Total new persons)
-    model.fc8 = nn.Linear(4096, 24)
+    model.fc8 = nn.Linear(4096, NUM_PEOPLE)
     for param in model.fc8.parameters():
         param.requires_grad = True
         
@@ -131,19 +132,19 @@ def main():
     optimizer = optim.Adam(model.fc8.parameters(), lr=LEARNING_RATE)
     
 	# Training Script
-    train_script(model, criterion, optimizer, device)
+    # train_script(model, criterion, optimizer, device)
     # Testing Script
-    test_script(device, criterion)
+    # test_script(model, criterion, device)
     
     
     #############################################################
     # Uncomment to Test single image
     #############################################################
-    # model.load_state_dict(torch.load(MODEL_SAVE_PATH))
-    # x=imLoad('./data/images/Aneri_Shah_3_Real.png')
-    # probabilities = F.softmax(model(x), dim=1)  # if x is batched
-    # predicted_class = probabilities.argmax(dim=1)
-    # print(predicted_class)
+    model.load_state_dict(torch.load(MODEL_SAVE_PATH))
+    x=imLoad('./data/images/Aneri_Shah_3_Real.png')
+    probabilities = F.softmax(model(x), dim=1)  # if x is batched
+    predicted_class = probabilities.argmax(dim=1)
+    print(predicted_class)
     
 
 if __name__ == "__main__":
