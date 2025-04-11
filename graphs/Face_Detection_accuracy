@@ -1,0 +1,21 @@
+Split 1: People in training split should not be in test split
+Train Loss = 0.3312, Train Accuracy = 0.8860 | Test Loss = 0.7123, Test Accuracy = 0.5926
+
+Split 2: People in training split can be in test split
+Train Loss = 0.2872, Train Accuracy = 0.9316 | Test Loss = 0.8479, Test Accuracy = 0.5882
+
+Split 3: 1 image per person in test, rest in train
+Face Detection Train and Test accuracy over 10 epochs::
+
+Epoch 1/10 | Train Loss: 3.3254, Acc: 0.0929 | Test Loss: 3.3080, Acc: 0.5000
+Epoch 2/10 | Train Loss: 3.2877, Acc: 0.6286 | Test Loss: 3.2806, Acc: 0.7143
+Epoch 3/10 | Train Loss: 3.2471, Acc: 0.8929 | Test Loss: 3.2531, Acc: 0.7857
+Epoch 4/10 | Train Loss: 3.2124, Acc: 0.9357 | Test Loss: 3.2253, Acc: 0.8214
+Epoch 5/10 | Train Loss: 3.1720, Acc: 0.9643 | Test Loss: 3.1980, Acc: 0.8214
+Epoch 6/10 | Train Loss: 3.1287, Acc: 0.9429 | Test Loss: 3.1702, Acc: 0.7857
+Epoch 7/10 | Train Loss: 3.0967, Acc: 0.9357 | Test Loss: 3.1432, Acc: 0.7857
+Epoch 8/10 | Train Loss: 3.0567, Acc: 0.9357 | Test Loss: 3.1163, Acc: 0.7857
+Epoch 9/10 | Train Loss: 3.0277, Acc: 0.9500 | Test Loss: 3.0902, Acc: 0.7857
+Epoch 10/10 | Train Loss: 2.9858, Acc: 0.9571 | Test Loss: 3.0642, Acc: 0.7857
+
+Final Testing Accuracy: 0.7857
