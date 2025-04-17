@@ -1,7 +1,7 @@
 # ImageSpoofDetection
-##############################################################################################
+#############################################################
 Authors : Aneri Shah, Ricky Lee, Shailly Bhati
-##############################################################################################
+#############################################################
 
 
 
@@ -37,27 +37,27 @@ https://www.youtube.com/watch?v=06R9K7RN9Uk
 To run this:
 - 
 1. Clone the repository:
-
+```python
 git clone https://github.com/anerishah7/AntiSpoofingDetection.git
-
+```
 2. Install dependencies:
-
+```python
 pip install -r requirements.txt
-
+```
 3. Download VGG_FACE.t7 from torch version of VGG models hosted by oxford:
 
 http://www.robots.ox.ac.uk/~vgg/software/vgg_face/src/vgg_face_torch.tar.gz
 Place it in project root folder.
 
 4. Run training model files.
-
+```python
 python3 spoof_train.py
 python3 face_detection_model_train.py
-
+```
 5. For real-time testing, run the following file:
-
+```python
 python3 real_time_testing.py
+```
 
-
-##############################################################################################
+#############################################################
 17th April, 2025
