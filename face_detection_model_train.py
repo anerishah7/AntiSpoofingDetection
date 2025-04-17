@@ -83,12 +83,18 @@ def train_script(model, criterion, optimizer, device):
     train_dataset = ClassificationDataSet(train_df, label_col=3, transform=transform, label_map_file=LABEL_MAP_FILE)
     train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True)
     
+    test_df = pd.read_csv(TEST_CSV)
+    test_dataset = ClassificationDataSet(test_df, label_col=3, transform=transform, label_map_file=LABEL_MAP_FILE)
+    test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
+    
     # Training loop
     for epoch in range(NUM_EPOCHS):
         train_loss, train_acc = train(model, train_loader, criterion, optimizer, device)
+        test_loss, test_acc = evaluate(model, test_loader, criterion, device)
 
         print(f"Epoch {epoch+1}/{NUM_EPOCHS} | "
-              f"Train Loss: {train_loss:.4f}, Acc: {train_acc:.4f} | ")
+              f"Train Loss: {train_loss:.4f}, Acc: {train_acc:.4f} | "
+              f"Test Loss: {test_loss:.4f}, Acc: {test_acc:.4f}")
 
     # Save the model
     torch.save(model.state_dict(), MODEL_SAVE_PATH)
@@ -96,15 +102,13 @@ def train_script(model, criterion, optimizer, device):
     
 def test_script(model, criterion, device):
     test_df = pd.read_csv(TEST_CSV)
-    test_dataset = ClassificationDataSet(test_df)
+    test_dataset = ClassificationDataSet(test_df, label_col=3, transform=transform, label_map_file=LABEL_MAP_FILE)
+
     test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False)
     model.load_state_dict(torch.load(MODEL_SAVE_PATH))
-	# Training loop
-    for epoch in range(NUM_EPOCHS):
-        test_loss, test_acc = evaluate(model, test_loader, criterion, device)
-
-        print(f"Epoch {epoch+1}/{NUM_EPOCHS} | "
-              f"Test Loss: {test_loss:.4f}, Acc: {test_acc:.4f}")
+    
+    test_loss, test_acc = evaluate(model, test_loader, criterion, device)
+    print(f"Test Loss: {test_loss:.4f}, Acc: {test_acc:.4f}")
     
 
 # -----------------------------
@@ -132,19 +136,19 @@ def main():
     optimizer = optim.Adam(model.fc8.parameters(), lr=LEARNING_RATE)
     
 	# Training Script
-    # train_script(model, criterion, optimizer, device)
+    train_script(model, criterion, optimizer, device)
     # Testing Script
-    # test_script(model, criterion, device)
+    test_script(model, criterion, device)
     
     
     #############################################################
     # Uncomment to Test single image
     #############################################################
-    model.load_state_dict(torch.load(MODEL_SAVE_PATH))
-    x=imLoad('./data/images/Aneri_Shah_3_Real.png')
-    probabilities = F.softmax(model(x), dim=1)  # if x is batched
-    predicted_class = probabilities.argmax(dim=1)
-    print(predicted_class)
+    # model.load_state_dict(torch.load(MODEL_SAVE_PATH))
+    # x=imLoad('./data/images/Aneri_Shah_3_Real.png')
+    # probabilities = F.softmax(model(x), dim=1)  # if x is batched
+    # predicted_class = probabilities.argmax(dim=1)
+    # print(predicted_class)
     
 
 if __name__ == "__main__":
